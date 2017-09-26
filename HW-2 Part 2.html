@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Set Implementation</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<style></style>
+
+<script>
+  class SetImpl {
+  
+		constructor() {
+      this.set = {};
+	  
+    }
+	
+    addMember(member) {
+      if (typeof member === 'string') {
+        if (!this.set[member]) {
+          this.set[member] = true;
+          console.log(member + '\' is added to the set.')
+        } else {
+          console.log('Member already exists in set')
+        }
+      } else {
+        console.log('Error:Add String type values only.');
+      }
+    }
+	
+	
+    removeMember(member) {
+      if (typeof member === 'string') {
+        if (this.set[member]) {
+          delete this.set[member];
+          console.log(member + '\' is removed to the set.')
+        } else {
+          console.log('Member does not exists in set')
+        }
+      } else {
+        console.log('Error:Add String type values only.');
+      }
+    }
+	
+	
+    printSetData() {
+      console.log(Object.keys(this.set));
+    }
+	
+  }
+  
+  
+  var testSetImpl = new SetImpl()
+testSetImpl.addMember("Test1");
+testSetImpl.addMember("Test2");
+testSetImpl.addMember("Test3");
+testSetImpl.addMember("Test3")
+testSetImpl.addMember(455);
+testSetImpl.printSetData("keys");
+testSetImpl.removeMember("Test4");
+testSetImpl.removeMember("Test1")
+testSetImpl.printSetData("keys");
+</script>
